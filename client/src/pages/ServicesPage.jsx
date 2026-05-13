@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import { api } from "../lib/api";
@@ -25,6 +26,12 @@ function ServicesPage() {
 
   return (
     <section className="section-shell py-16 md:py-20">
+      <SEO
+        title="Astrology, Numerology, Tarot & Healing Services | Mystic Veda"
+        description="Explore our online services — astrology readings, numerology reports, tarot guidance, chakra balancing, YPV healing & manifestation coaching."
+        path="/services"
+        keywords="astrology reading online, numerology report, tarot reading, chakra balancing, YPV healing, energy healing sessions, manifestation coaching"
+      />
       <SectionHeading
         eyebrow="Services"
         title="Find the experience that resonates with your current phase"

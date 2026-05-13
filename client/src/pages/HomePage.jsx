@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 import TestimonialCard from "../components/TestimonialCard";
 import { studioHighlights, testimonials } from "../lib/constants";
@@ -16,6 +17,12 @@ function HomePage() {
 
   return (
     <div>
+      <SEO
+        title="Online Astrology, Numerology, Tarot & YPV Healing | Mystic Veda"
+        description="Get online astrology, numerology, tarot readings & YPV healing. Personalized guidance for clarity, career, relationships & energy healing worldwide."
+        path="/"
+        keywords="online astrology reading, numerology reading online, tarot reading online, YPV healing, energy healing, chakra balancing, manifestation coaching, mystic veda holistic studio"
+      />
       <section className="section-shell grid gap-12 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
         <div className="animate-fade-up">
           <p className="mb-4 inline-flex rounded-full border border-mystic-gold/30 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-mystic-gold">

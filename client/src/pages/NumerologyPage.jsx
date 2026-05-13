@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "../components/SEO";
 import SectionHeading from "../components/SectionHeading";
 
 const PYTHAGOREAN_MAP = {
@@ -749,6 +750,12 @@ function NumerologyPage() {
 
   return (
     <section className="section-shell py-16 md:py-20">
+      <SEO
+        title="Free Numerology Reading Online — Name, DOB & Mobile | Mystic Veda"
+        description="Calculate your numerology number free online. Get name numerology, date of birth life path number & mobile number readings with Chaldean & Pythagorean systems."
+        path="/numerology"
+        keywords="numerology reading online, free numerology calculator, name numerology, life path number, chaldean numerology, pythagorean numerology, mobile number numerology"
+      />
       <SectionHeading
         eyebrow="Numerology"
         title="Decode the vibrations behind your name and number"

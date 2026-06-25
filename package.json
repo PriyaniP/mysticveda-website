@@ -11,6 +11,14 @@
     "build": "npm run build --workspace client",
     "start": "npm run start --workspace server"
   },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "googleapis": "^171.4.0",
+    "mongoose": "^8.12.2",
+    "nodemailer": "^8.0.4"
+  },
   "devDependencies": {
     "concurrently": "^9.1.2"
   }

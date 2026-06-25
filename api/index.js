@@ -5,6 +5,7 @@ import { createApp } from "../server/src/app.js";
 import { connectDatabase } from "../server/src/config/db.js";
 import { createAvailabilityStore } from "../server/src/utils/availabilityStore.js";
 import { createAppointmentStore } from "../server/src/utils/appointmentStore.js";
+import { createBlogStore } from "../server/src/utils/blogStore.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,7 +20,8 @@ async function initializeApp() {
   const useMongo = await connectDatabase();
   const store = createAppointmentStore(useMongo);
   const availabilityStore = createAvailabilityStore();
-  app = createApp(store, availabilityStore);
+  const blogStore = createBlogStore(useMongo);
+  app = createApp(store, availabilityStore, blogStore);
   
   return app;
 }

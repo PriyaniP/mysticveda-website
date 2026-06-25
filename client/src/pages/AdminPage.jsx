@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BlogManager from "../components/BlogManager";
 import SectionHeading from "../components/SectionHeading";
 import { useAuth } from "../context/AuthContext";
 import { api } from "../lib/api";
@@ -304,6 +305,16 @@ function AdminPage() {
             </table>
           </div>
         )}
+      </div>
+
+      <div className="mt-12">
+        <SectionHeading
+          eyebrow="Blog"
+          title="Write & manage blog posts"
+          description="Publish articles that appear instantly on the public blog page. Edit or remove them anytime."
+          align="left"
+        />
+        <BlogManager />
       </div>
     </section>
   );

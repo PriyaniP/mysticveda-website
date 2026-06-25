@@ -96,5 +96,21 @@ export const api = {
     request("/book-appointment", {
       method: "POST",
       body: JSON.stringify(payload)
+    }),
+  getBlogs: () => request("/blogs"),
+  getBlog: (slug) => request(`/blogs/${slug}`),
+  createBlog: (payload) =>
+    request("/blogs", {
+      method: "POST",
+      body: JSON.stringify(payload)
+    }),
+  updateBlog: (id, payload) =>
+    request(`/blogs/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(payload)
+    }),
+  deleteBlog: (id) =>
+    request(`/blogs/${id}`, {
+      method: "DELETE"
     })
 };

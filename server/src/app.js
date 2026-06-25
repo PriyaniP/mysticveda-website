@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { createAppointmentsController } from "./controllers/appointmentsController.js";
 import { createAvailabilityRouter } from "./routes/availabilityRoutes.js";
+import { createBlogRouter } from "./routes/blogRoutes.js";
 import { createEmailRouter } from "./routes/emailRoutes.js";
 import servicesRoutes from "./routes/servicesRoutes.js";
 import { createAppointmentsRouter } from "./routes/appointmentsRoutes.js";
@@ -20,11 +21,10 @@ function getAllowedOrigins() {
   return new Set(configuredOrigins);
 }
 
-export function createApp(store, availabilityStore) {
+export function createApp(store, availabilityStore, blogStore) {
   const app = express();
   const appointmentsController = createAppointmentsController(store);
   const allowedOrigins = getAllowedOrigins();
-
   app.use(
     cors({
       origin(origin, callback) {
@@ -51,6 +51,10 @@ export function createApp(store, availabilityStore) {
   app.use("/api/services", servicesRoutes);
   app.use("/api/appointments", createAppointmentsRouter(store));
   app.post("/api/book-appointment", appointmentsController.bookAppointment);
+
+  if (blogStore) {
+    app.use("/api/blogs", createBlogRouter(blogStore));
+  }
 
   app.use((error, _request, response, _next) => {
     console.error(error);

@@ -8,6 +8,7 @@ function Navbar() {
     { label: "Home", to: "/" },
     { label: "Services", to: "/services" },
     { label: "Numerology", to: "/numerology" },
+    { label: "Blog", to: "/blog" },
     ...(isUser ? [{ label: "My Bookings", to: "/profile" }] : []),
     ...(isAdmin ? [{ label: "Admin", to: "/admin" }] : [])
   ];
